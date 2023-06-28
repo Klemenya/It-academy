@@ -19,6 +19,7 @@ std::ifstream OpenStream(const std::string& nameFile)
 void PrintFile(std::ifstream& stream, const std::string& name)
 {
 	std::cout << "--- " << name << " ---\n";
+
 	while (!stream.fail())
 	{
 		std::string str;
@@ -27,7 +28,7 @@ void PrintFile(std::ifstream& stream, const std::string& name)
 	}
 }
 
-void Masking(std::ifstream& image, std::ifstream& mask, std::ofstream& result)
+void Masking(std::ifstream& image,std::ifstream& mask, std::ofstream& result)
 {
 	image.clear();
 	image.seekg(0, std::ios_base::beg);
@@ -42,12 +43,10 @@ void Masking(std::ifstream& image, std::ifstream& mask, std::ofstream& result)
 		std::string strMask;
 		getline(mask, strMask);
 
-
 		std::stringstream localStreamImage;
 		localStreamImage << strImage;
 		std::stringstream localStreamMask;
 		localStreamMask << strMask;
-
 
 		int cImage;
 		int cMask;
@@ -62,7 +61,6 @@ void Masking(std::ifstream& image, std::ifstream& mask, std::ofstream& result)
 			localStreamMask >> cMask;
 		}
 		result << '\n';
-
 	}
 }
 

@@ -1,6 +1,5 @@
 
 #include <fstream>
-
 #include "utilities.h"
 
 constexpr auto IMAGE = "image.txt";
@@ -11,7 +10,6 @@ constexpr auto COMPRESSED = "compressed_mask.txt";
 
 int main(int argc, char* argv[])
 {
-
 	std::ifstream ifsImg = OpenStream(IMAGE);
 	std::ifstream ifsMask = OpenStream(MASK);
 	std::ofstream ofsCompressed(COMPRESSED);
