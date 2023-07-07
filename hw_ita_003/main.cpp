@@ -1,74 +1,31 @@
-#include <vector>
-#include <iostream>
-#include <memory>
+#include "myVector.h"
+#include "utilities.h"
 
-
-void findMinEven(std::vector<int>&, std::shared_ptr<int>&);
-void findMinOdd(std::vector<int>&, std::shared_ptr<int>&);
 
 int main()
 {
-    std::vector<int> myVec = { 1,5,7,9,5,11,13,2,3,17 };
+	auto pMyVector = CreateVector();
+	fillVector(pMyVector);
 
-    if (myVec.size() != 0) {
-        std::shared_ptr<int> minElement;
-        minElement = nullptr;
+	if (pMyVector->empty())
+	{
+		std::cout << "Vector is empty\nProgram is closed." << std::endl;
+		return 0;
+	}
 
-        findMinEven(myVec, minElement);
+	printVector(pMyVector, "Initial values");
 
-        if (minElement == nullptr) {
-            findMinOdd(myVec, minElement);
-        }
+	std::cout << "\n----- Task 1 ------" << std::endl;
+	finMinElement(pMyVector);
 
-        std::cout << *minElement;
-    }
-    else
-    {
-        std::cout << "Error! Vector is empty!" << std::endl;
-    }
+	std::cout << "\n----- Task 2 ------" << std::endl;
+	printSumDigitsMinAndMaxNumbers(pMyVector);
 
+	std::cout << "\n----- Task 3 ------" << std::endl;
+	getProductOfElementsWithOddIndexes(pMyVector);
 
+	std::cout << "\n----- Task 4 ------" << std::endl;
+	swap(pMyVector);
 
-}
-
-void findMinEven(std::vector<int>& v, std::shared_ptr<int>& ptr) {
-
-    for (auto el : v) {
-        if (el % 2 == 0)
-        {
-            if (ptr == nullptr)
-            {
-                ptr = std::make_shared <int>();
-                *ptr = el;
-            }
-            else
-            {
-                if (*ptr > el)
-                {
-                    *ptr = el;
-                }
-            }
-        }
-    }
-}
-
-void findMinOdd(std::vector<int>& v, std::shared_ptr<int>& ptr) {
-
-    for (auto el : v) {
-        if (el % 2 != 0)
-        {
-            if (ptr == nullptr)
-            {
-                ptr = std::make_shared <int>();
-                *ptr = el;
-            }
-            else
-            {
-                if (*ptr > el)
-                {
-                    *ptr = el;
-                }
-            }
-        }
-    }
+	return 0;
 }
