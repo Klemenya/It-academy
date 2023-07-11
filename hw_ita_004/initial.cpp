@@ -46,7 +46,7 @@ void CheckFile(const std::string& PATH)
 
 
 
-std::string Organization::GetOrganizationName()
+std::shared_ptr<std::string> Organization::GetOrganizationName()
 {
 	return Organization::organizationName;
 }

@@ -7,10 +7,11 @@ int main()
 {
 	Initial();
 
-	Organization myFirm;
+	Organization organization;
 	
+	std::cout << sizeof(Organization) << std::endl;
 
-	Menu(myFirm);
+	Menu(organization);
 
 	return 0;
 }

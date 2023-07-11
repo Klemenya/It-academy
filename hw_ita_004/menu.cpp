@@ -38,7 +38,7 @@ void Menu(Organization &myFirm)
 		}
 		case 6:
 		{
-			std::cout << myFirm.GetOrganizationName() << std::endl;
+			std::cout << *myFirm.GetOrganizationName() << std::endl;
 			break;
 		}
 		}
