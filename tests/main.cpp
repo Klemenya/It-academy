@@ -4,9 +4,12 @@
 
 struct MenuItem
 {
-	size_t MenuItemNum;
-	std::shared_ptr <std::string> (MenuItemText);
-	std::shared_ptr <std::string> (MenuItemFunc);
+	size_t MenuItemNum{};
+	//std::shared_ptr <std::string> (MenuItemText);
+	//std::shared_ptr <std::string> (MenuItemFunc);
+	std::string MenuItemText{};
+	std::string MenuItemFunc{};
+
 };
 
 
@@ -16,19 +19,24 @@ private:
 	std::shared_ptr<std::vector<MenuItem>> pMenuItem;
 public:
 
-	Menu() 
+	Menu()
 	{
 		std::vector<MenuItem > vStruct;
+
+
+		//MenuItem menuItem;
+
+		//menuItem.MenuItemNum = 1;
+		//std::string text {"first item"};
+		//menuItem.MenuItemText = std::make_shared<std::string>(text);
+		//text = "func item";
+		//menuItem.MenuItemFunc = std::make_shared<std::string>(text);
 		
-
-		MenuItem menuItem;
-
-		menuItem.MenuItemNum = 1;
-		std::string text {"first item"};
-		menuItem.MenuItemText = std::make_shared<std::string>(text);
-		text = "func item";
-		menuItem.MenuItemFunc = std::make_shared<std::string>(text);
+		std::string first{"first item"}, second{ "func item" };
+		MenuItem menuItem = { 1, first , second };
+				 
 		vStruct.push_back(menuItem);
+
 
 		pMenuItem = std::make_shared<std::vector<MenuItem>>(vStruct);
 		
@@ -53,8 +61,8 @@ int main()
 
 void Menu::ShowMenu()
 {
-	for (auto el : *pMenuItem)
+	for (const auto &el : *pMenuItem)
 	{
-		std::cout << el.MenuItemNum << "\t" << *el.MenuItemText << "- " << *el.MenuItemFunc << std::endl;
+		std::cout << el.MenuItemNum << "\t" << el.MenuItemText << "- " << el.MenuItemFunc << std::endl;
 	}
 }
