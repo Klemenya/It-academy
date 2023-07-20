@@ -2,12 +2,12 @@
 
 #include <fstream>
 
-const std::string DETAILS = "details.txt";
+const std::string PATH = "details.txt";
 
 void Initial()
 {
 	SetupConsole();
-	CheckFile(DETAILS);
+	CheckFile(PATH);
 	
 
 }

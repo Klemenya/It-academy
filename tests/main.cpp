@@ -22,11 +22,11 @@ public:
 
 	Menu()
 	{
-		std::vector<MenuItem> vStruct;
+		std::vector<MenuItem> vMenuItem;
 
-		FillMenu(vStruct);
+		FillMenu(vMenuItem);
 
-		pMenuItem = std::make_shared<std::vector<MenuItem>>(vStruct);
+		pMenuItem = std::make_shared<std::vector<MenuItem>>(vMenuItem);
 
 
 
@@ -109,3 +109,14 @@ void Menu::ShowMenu()
 		std::cout << el.MenuItemNum << ". " << *el.MenuItemText << " (" << *el.MenuItemFunc << ")" << std::endl;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
