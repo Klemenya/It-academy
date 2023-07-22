@@ -4,9 +4,19 @@
 #include <iostream>
 #include <iomanip>
 
+//#include ""
 
+
+
+int m_pos = 0;          // позиция меню
+int max_pos = 3;        // максимальная позиция меню
+char s1[101];
+
+char* ru(const char* s) { AnsiToOem(s, s1);   return s1; } // вывод русским языком
 
 HANDLE hConsole, hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+
+
 
 void add()
 {
@@ -17,13 +27,6 @@ void dif()
 {
     return;
 }// нам функции
-
-
-int m_pos = 0;          // позиция меню
-int max_pos = 3;        // максимальная позиция меню
-char s1[101];
-
-char* ru(const char* s) { AnsiToOem(s, s1);   return s1; } // вывод русским языком
 
 enum ConsoleColor
 {
@@ -47,14 +50,27 @@ enum ConsoleColor
 
 
 
+void hidecursor()
+{
+    //HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_CURSOR_INFO info;
+    info.dwSize = 100;
+    info.bVisible = FALSE;
+    SetConsoleCursorInfo(hStdOut, &info);
+}
+
+
 void SetColor(int text, int background) // устанавливаем цвет
 {
     HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hStdOut, (WORD)((background << 4) | text));
 }
 
-void GotoXY(int X, int Y) // позиция курсора
+void GotoXY(int x, int y) // позиция курсора
 {
+    SHORT X = static_cast<SHORT>(x);
+    SHORT Y = static_cast<SHORT>(y);
+
     COORD coord = { X, Y };
     SetConsoleCursorPosition(hStdOut, coord);
 }
@@ -84,11 +100,13 @@ void choice();
 void showBorder()
 {
     std::cout << '\xc9' << std::right << std::setfill('\xcd') << std::setw(79 - 1) << '\xbb' << std::endl;
-    for (size_t idx(0); idx < 20; idx++)
+
+    for (size_t idx(0); idx < 23; idx++)
     {
         std::cout << '\xba' << std::right << std::setfill(' ') << std::setw(79 - 1) << '\xba' << std::endl;
     }
-    std::cout << '\xc8' << std::right << std::setfill('\xcd') << std::setw(79 - 1) << '\xbc' << std::endl;
+
+    std::cout << '\xc8' << std::right << std::setfill('\xcd') << std::setw(79 - 1) << '\xbc' ;
 }
 
 
@@ -186,9 +204,20 @@ l:
     }
 }
 
-void main()
+int main()
 {
+
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
     system("cls"); // очистить экран
+    hidecursor();
+
+
+ 
     showBorder();
     menu();
+
+
+
+    return 0;
 }
