@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33801.447
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hw_ita_001", "hw_ita_001\hw_ita_001.vcxproj", "{6E47460A-123D-447B-BED5-61859C301AD1}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "consolMenu", "consolMenu\consolMenu.vcxproj", "{25C5343F-58A5-4C7E-8889-7C7C239B6E4F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hw_ita_005", "hw_ita_005\hw_ita_005.vcxproj", "{721246C5-8699-4B2B-ACCF-357CB555DB66}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hw_ita_005v2", "hw_ita_005v2\hw_ita_005v2.vcxproj", "{B185BA56-98AB-4FFB-8E43-6C6F84177367}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,14 @@ Global
 		{721246C5-8699-4B2B-ACCF-357CB555DB66}.Release|x64.Build.0 = Release|x64
 		{721246C5-8699-4B2B-ACCF-357CB555DB66}.Release|x86.ActiveCfg = Release|Win32
 		{721246C5-8699-4B2B-ACCF-357CB555DB66}.Release|x86.Build.0 = Release|Win32
+		{B185BA56-98AB-4FFB-8E43-6C6F84177367}.Debug|x64.ActiveCfg = Debug|x64
+		{B185BA56-98AB-4FFB-8E43-6C6F84177367}.Debug|x64.Build.0 = Debug|x64
+		{B185BA56-98AB-4FFB-8E43-6C6F84177367}.Debug|x86.ActiveCfg = Debug|Win32
+		{B185BA56-98AB-4FFB-8E43-6C6F84177367}.Debug|x86.Build.0 = Debug|Win32
+		{B185BA56-98AB-4FFB-8E43-6C6F84177367}.Release|x64.ActiveCfg = Release|x64
+		{B185BA56-98AB-4FFB-8E43-6C6F84177367}.Release|x64.Build.0 = Release|x64
+		{B185BA56-98AB-4FFB-8E43-6C6F84177367}.Release|x86.ActiveCfg = Release|Win32
+		{B185BA56-98AB-4FFB-8E43-6C6F84177367}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

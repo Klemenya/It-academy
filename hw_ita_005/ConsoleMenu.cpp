@@ -65,7 +65,7 @@ void ConsoleMenu::FillMenu(std::vector<MenuItem>& vStruct)
 
 void ConsoleMenu::ShowMenu()
 {
-	auto menu = *pMenu;
+	auto &menu = *pMenu;
 	
 	showBorder(m_widthMenu,m_heightMenu);
 
