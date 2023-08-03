@@ -6,7 +6,7 @@
 int main()
 {
 
-	FoodStore store;
+	FoodStore1 store;
 
 	Product apple1("apple red", 10.10f, 1, -1, 10);
 	Product apple2("apple green", 12.12f, 1, -1, 15);
