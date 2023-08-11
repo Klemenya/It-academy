@@ -7,9 +7,11 @@
 
 int main()
 {
-	
+
+#pragma region Задание номер 1
+
 	//std::vector<std::string> myVecStr;
-	//
+	// 	//
 	//myVecStr.push_back("qwertyuiop");
 	//myVecStr.push_back("qwertyuiop");
 	//myVecStr.push_back("qwertyuiop");
@@ -36,21 +38,22 @@ int main()
 
 
 	//std::cout << counter << std::endl;
+#pragma endregion
 
-
-
+#pragma region Задание номер 2
 
 
 	std::vector<int> testInt { 1, 2, 3, 4, 5, 6, 7, 8};
-	TemplateVector <int> templatevector({ testInt });
+	TemplateVector <std::vector<int>> templatevector({ testInt });
 
 	std::vector<std::string> testString{"text1", "text2", "text3"};
-	TemplateVector <std::string> templatevector2({ testString });
+	TemplateVector <std::vector<std::string>> templatevector2({ testString });
 
 
 	
 	templatevector.showVector();
 	templatevector2.showVector();
+#pragma endregion
 
 
 

@@ -8,11 +8,11 @@ class TemplateVector
 {
 private:
 
-	std::vector<T> m_myVector;
+	T m_myVector;
 
 public:
 
-	TemplateVector(std::vector<T> myVector) : m_myVector{ myVector }
+	TemplateVector(T myVector) : m_myVector{ myVector }
 	{
 	}
 
