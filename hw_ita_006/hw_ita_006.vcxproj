@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -127,11 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FuncList.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="TemplateVector.cpp" />
+    <ClCompile Include="MyTVector.cpp" />
+    <ClCompile Include="MyVectorT.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TemplateVector.h" />
+    <ClInclude Include="FuncList.h" />
+    <ClInclude Include="MyTVector.h" />
+    <ClInclude Include="MyVectorT.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="underTheSea.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
