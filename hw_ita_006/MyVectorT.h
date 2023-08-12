@@ -3,7 +3,7 @@
 #include <iostream>
 #include <functional>
 #include <algorithm>
-/*
+
 template <typename T>
 class MyVectorTParent
 {
@@ -24,7 +24,7 @@ class MyVectorT : public MyVectorTParent<T>
 {
 
 public:
-	MyVectorT(std::vector<T> myVector) : MyVectorTParent(myVector)
+	MyVectorT(std::vector<T> myVector) : MyVectorTParent<T>(myVector)
 	{
 	}
 	void ShowMyVector();
@@ -36,7 +36,7 @@ public:
 template<typename T>
 void MyVectorT<T>::ShowMyVector()
 {
-	for (const auto& el : m_myVector)
+	for (const auto& el : this->m_myVector)
 	{
 		std::cout << el << " ";
 	}
@@ -46,9 +46,9 @@ void MyVectorT<T>::ShowMyVector()
 template<typename T>
 bool MyVectorT<T>::PairwiseComparison()
 {
-	m_myVector.
-	auto it = std::adjacent_find(m_myVector.begin(), m_myVector.end());
-	if (it != m_myVector.end())
+	//m_myVector.
+	auto it = std::adjacent_find(this->m_myVector.begin(), this->m_myVector.end());
+	if (it != this->m_myVector.end())
 	{
 		return true;
 	}
@@ -58,7 +58,20 @@ bool MyVectorT<T>::PairwiseComparison()
 template<typename T>
 void MyVectorT<T>::ModifyMyVector(std::function<T(T)> myLambda)
 {
-	std::transform(m_myVector.begin(), m_myVector.end(), m_myVector.begin(), myLambda);
+	std::transform(this->m_myVector.begin(), this->m_myVector.end(), this->m_myVector.begin(), myLambda);
 }
 
-*/
+
+//template <>
+//class MyVectorT<std::string> : public MyVectorTParent<std::string>
+//{
+//
+//public:
+//	MyVectorT(std::vector<std::string> myVector) : MyVectorTParent<std::string>(myVector)
+//	{
+//	}
+//	void ShowMyVector();
+//	bool PairwiseComparison();
+//	void ModifyMyVector(std::function<std::string(std::string)> myLambda);
+//
+//};

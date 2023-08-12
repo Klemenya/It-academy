@@ -3,7 +3,7 @@
 #include <functional>
 
 #include "MyTVector.h"
-//#include "MyVectorT.h"
+#include "MyVectorT.h"
 
 
 int main()
@@ -51,7 +51,7 @@ int main()
 	//
 
 
-	/*
+	
 	std::vector<int> testInt { 1, 2, 3, 4, 5, 6, 7, 8, 8};
 	MyVectorT<int> myVectorInt{testInt};
 
@@ -69,6 +69,7 @@ int main()
 	myVectorInt.ModifyMyVector(myFoo);
 	myVectorInt.ShowMyVector();
 	////////////////////////////////////////////////////////////////
+
 	std::vector<std::string> testString{"text1", "text2", "text3", "apple", "apple2"};
 	MyVectorT <std::string> myVectorStr(testString);
 	myVectorStr.ShowMyVector();
@@ -76,10 +77,11 @@ int main()
 	//myVectorStr.ModifyMyVector();
 	//myVectorStr.ShowMyVector();
 	//std::cout << (myTVector2.PairwiseComparison() ? "Pairing is present" : "No pairing") << std::endl;
-	*/
+	
+	std::cout << "\n-------------------------------------------------\n";
 
-
-	std::vector<int> testInt { 1, 2, 3, 4, 5, 6, 7, 8, 8};
+	//std::vector<int> 
+		testInt = { 1, 2, 3, 4, 5, 6, 7, 8, 8};
 	MyTVector <std::vector<int>> myTVector1(testInt);
 
 	
@@ -87,7 +89,7 @@ int main()
 
 	std::cout << (myTVector1.PairwiseComparison() ? "Pairing is present" : "No pairing") << std::endl;
 
-	std::function<int(int)> myFoo;
+	//std::function<int(int)> myFoo;
 	myFoo = [](int el) {return el * 2; };
 	
 	myTVector1.ModifyMyVector(myFoo);
@@ -98,7 +100,8 @@ int main()
 	myTVector1.ModifyMyVector(myFoo);
 	myTVector1.ShowMyVector();
 
-	std::vector<std::string> testString{"text1", "text2", "text3", "apple", "apple2"};
+	//std::vector<std::string> 
+	testString = {"text1", "text2", "text3", "apple", "apple2"};
 	MyTVector <std::vector<std::string>> myTVector2(testString);
 	myTVector2.ShowMyVector();
 	myTVector2.ModifyMyVector();
