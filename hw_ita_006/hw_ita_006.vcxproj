@@ -129,12 +129,10 @@
   <ItemGroup>
     <ClCompile Include="FuncList.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyTVector.cpp" />
     <ClCompile Include="MyVectorT.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FuncList.h" />
-    <ClInclude Include="MyTVector.h" />
     <ClInclude Include="MyVectorT.h" />
   </ItemGroup>
   <ItemGroup>

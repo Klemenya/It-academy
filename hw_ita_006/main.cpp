@@ -46,17 +46,15 @@ int main()
 
 	// [+]	Создать шаблонный класс для работы с вектором данных
 	// [+]	Создать минимум 1 ф-ю, анализирующую вектор поэлементно (например std::transform)
-	// [-]	Создать минимум 1 ф-ю, сравнивающую элементы попарно (например std::adjacent_find)
-	// [+]	Параметры изменения передаются в ф-ю пользователем класса
-	//
+	// [+]	Создать минимум 1 ф-ю, сравнивающую элементы попарно (например std::adjacent_find)
+	// [+]	Параметры изменения передаются в ф-ю пользователем класс
 
+	std::cout << " --- int ---\n";
 
-	
 	std::vector<int> testInt { 1, 2, 3, 4, 5, 6, 7, 8, 8};
 	MyVectorT<int> myVectorInt{testInt};
 
 	myVectorInt.ShowMyVector();
-	myVectorInt.PairwiseComparison();
 	std::cout << (myVectorInt.PairwiseComparison() ? "Pairing is present" : "No pairing") << std::endl;
 	
 	std::function<int(int)> myFoo;
@@ -66,48 +64,24 @@ int main()
 	myVectorInt.ShowMyVector();
 	
 	myFoo = [](int el) {return el + 1; };
+	
 	myVectorInt.ModifyMyVector(myFoo);
 	myVectorInt.ShowMyVector();
+	
 	////////////////////////////////////////////////////////////////
+	
+	std::cout << "\n --- std::string ---\n";
 
-	std::vector<std::string> testString{"text1", "text2", "text3", "apple", "apple2"};
+	std::vector<std::string> testString{"text1", "text2", "text3", "apple", "apple"};
 	MyVectorT <std::string> myVectorStr(testString);
+	
 	myVectorStr.ShowMyVector();
-
-	//myVectorStr.ModifyMyVector();
-	//myVectorStr.ShowMyVector();
-	//std::cout << (myTVector2.PairwiseComparison() ? "Pairing is present" : "No pairing") << std::endl;
+	std::cout << (myVectorStr.PairwiseComparison() ? "Pairing is present" : "No pairing") << std::endl;
+	
+	myVectorStr.ModifyMyVector();
+	myVectorStr.ShowMyVector();
 	
 	std::cout << "\n-------------------------------------------------\n";
-
-	//std::vector<int> 
-		testInt = { 1, 2, 3, 4, 5, 6, 7, 8, 8};
-	MyTVector <std::vector<int>> myTVector1(testInt);
-
-	
-	myTVector1.ShowMyVector();
-
-	std::cout << (myTVector1.PairwiseComparison() ? "Pairing is present" : "No pairing") << std::endl;
-
-	//std::function<int(int)> myFoo;
-	myFoo = [](int el) {return el * 2; };
-	
-	myTVector1.ModifyMyVector(myFoo);
-	myTVector1.ShowMyVector();
-
-	myFoo = [](int el) {return el + 1; };
-	
-	myTVector1.ModifyMyVector(myFoo);
-	myTVector1.ShowMyVector();
-
-	//std::vector<std::string> 
-	testString = {"text1", "text2", "text3", "apple", "apple2"};
-	MyTVector <std::vector<std::string>> myTVector2(testString);
-	myTVector2.ShowMyVector();
-	myTVector2.ModifyMyVector();
-	myTVector2.ShowMyVector();
-	std::cout << (myTVector2.PairwiseComparison() ? "Pairing is present" : "No pairing") << std::endl;
-	
 
 #pragma endregion
 
