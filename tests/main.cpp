@@ -6,14 +6,36 @@
 #include <string>
 
 
+class Test
+{
+protected:
+	std::vector<int> m_value;
+public:
+	Test(std::vector<int> value) : m_value{ value } {}
+
+	void ShowValue() 
+	{
+		for (const auto& el : m_value)
+		{
+			std::cout << el << " ";
+		}
+	}
+};
+
+class TestChild : public Test
+{
+public:
+	TestChild(std::vector<int> value) : Test(value) {}
+
+
+};
+
 struct MenuItem
 {
 	size_t MenuItemNum{};
 	std::shared_ptr <std::string>(MenuItemText);
 	std::shared_ptr <std::string>(MenuItemFunc);
 };
-
-
 class Menu
 {
 private:
@@ -38,16 +60,15 @@ public:
 	void FillMenu(std::vector<MenuItem>&);
 };
 
-
-
-
 int main()
 {
-	
+	std::vector<int> a {1, 2, 3, 4, 5, 6, 7};
+	TestChild tc(a);
+	tc.ShowValue();
 
-	Menu menu;
+	/*Menu menu;
 
-	menu.ShowMenu();
+	menu.ShowMenu();*/
 
 	return 0;
 }
