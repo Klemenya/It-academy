@@ -15,6 +15,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <None Include="myService.txt">
+      <Filter>Source Files</Filter>
+    </None>
     <None Include="myService.md">
       <Filter>Source Files</Filter>
     </None>
